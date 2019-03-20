@@ -25,6 +25,8 @@ function crearPublicacion(user, desc, imag){
 	var crearImagen = document.createElement("img");
 	var crearFecha = document.createElement("span");
 	var crearBoton = document.createElement("button");
+	var crearSeparador = document.createElement("hr");
+	var crearComentarios = document.createElement("div");
 	crearUsuario.textContent = user;
 	crearDescripcion.textContent = desc;
 	crearFecha.textContent = fecha.getDate() + "/" + arrayMeses[fecha.getMonth()] + "/" + fecha.getFullYear();
@@ -32,10 +34,20 @@ function crearPublicacion(user, desc, imag){
 	crearImagen.width = 150;
 	crearImagen.heigth = 150;
 	crearBoton.textContent = "Comentarios (" + nuevaPublicacion + ")";
+	crearBoton.onclick = "hideDiv(0);";
+	crearComentarios.id = "com"+nuevaPublicacion;
 	divPublicaciones.appendChild(crearImagen);
 	divPublicaciones.appendChild(crearUsuario);
 	divPublicaciones.appendChild(crearDescripcion);
 	divPublicaciones.appendChild(crearFecha);
 	divPublicaciones.appendChild(crearBoton);
+	divPublicaciones.appendChild(crearComentarios);
+	divPublicaciones.appendChild(crearSeparador);
 	document.body.appendChild(divPublicaciones);
 }
+
+function hideDiv(){
+	console.log("Se escondio");
+	document.getElementById("com0").style.display = "none";
+}
+
