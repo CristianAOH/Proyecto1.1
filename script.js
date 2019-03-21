@@ -47,6 +47,7 @@ function crearPublicacion(user, desc, imag){
 	crearImagen.src = imag;
 	crearImagen.width = 150;
 	crearImagen.heigth = 150;
+	crearBoton.id = "botonContadorComentario" + numPublicacion;
 	crearBoton.textContent = "Comentarios (" + nuevaPublicacion + ")";
 	crearBoton.addEventListener("click", function(){hideDiv(id)}, false); 
 
@@ -116,5 +117,15 @@ function crearComentario(idBoton){
 
 	//Vaciando input
 	document.getElementById("input"+idBoton).value = "";
+
+	actualizarContador(idBoton);
+}
+
+function actualizarContador(idComments){
+	var elemento = document.getElementById("colocarComments"+idComments);
+	var numComments = elemento.getElementsByTagName("p").length;
+	console.log("Total comentarios: " + numComments);
+	var actualizarBoton = document.getElementById("botonContadorComentario"+idComments);
+	actualizarBoton.textContent = "Comentarios (" + numComments + ")";
 }
 
