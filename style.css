@@ -1,8 +1,12 @@
 
-.columna1, .columna2 {
+.columna1, .columna2 , .columna3{
 	display: inline-block;
 }
 
 .columna2 {
 	vertical-align:top;
+}
+
+.columna3 {
+	text-align: right;
 }
