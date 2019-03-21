@@ -18,7 +18,8 @@ function limpiarCampos(){
 }
 
 function crearPublicacion(user, desc, imag){
-	//var divPublicaciones = document.getElementsByTagName("div")[1];
+	var divTodo = document.createElement("div");
+	var divImagen = document.createElement("div");
 	var divPublicaciones = document.createElement("div");
 	var crearUsuario = document.createElement("span");
 	var crearDescripcion = document.createElement("span");
@@ -27,6 +28,8 @@ function crearPublicacion(user, desc, imag){
 	var crearBoton = document.createElement("button");
 	var crearSeparador = document.createElement("hr");
 	var crearComentarios = document.createElement("div");
+	divImagen.className = "columna1";
+	divPublicaciones.className = "columna2";
 	crearUsuario.textContent = user;
 	crearDescripcion.textContent = desc;
 	crearFecha.textContent = fecha.getDate() + "/" + arrayMeses[fecha.getMonth()] + "/" + fecha.getFullYear();
@@ -34,16 +37,18 @@ function crearPublicacion(user, desc, imag){
 	crearImagen.width = 150;
 	crearImagen.heigth = 150;
 	crearBoton.textContent = "Comentarios (" + nuevaPublicacion + ")";
-	crearBoton.onclick = "hideDiv(0);";
+	crearBoton.addEventListener("click", hideDiv, false); 
 	crearComentarios.id = "com"+nuevaPublicacion;
-	divPublicaciones.appendChild(crearImagen);
+	divImagen.appendChild(crearImagen);
 	divPublicaciones.appendChild(crearUsuario);
 	divPublicaciones.appendChild(crearDescripcion);
 	divPublicaciones.appendChild(crearFecha);
 	divPublicaciones.appendChild(crearBoton);
-	divPublicaciones.appendChild(crearComentarios);
+	//divPublicaciones.appendChild(crearComentarios);
 	divPublicaciones.appendChild(crearSeparador);
-	document.body.appendChild(divPublicaciones);
+	divTodo.appendChild(divImagen);
+	divTodo.appendChild(divPublicaciones);
+	document.body.appendChild(divTodo);
 }
 
 function hideDiv(){
