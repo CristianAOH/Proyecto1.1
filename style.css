@@ -2,3 +2,7 @@
 .columna1, .columna2 {
 	display: inline-block;
 }
+
+.columna2 {
+	vertical-align:top;
+}

@@ -18,18 +18,21 @@ function limpiarCampos(){
 }
 
 function crearPublicacion(user, desc, imag){
+	//Sección de la Publicación
 	var divTodo = document.createElement("div");
 	var divImagen = document.createElement("div");
 	var divPublicaciones = document.createElement("div");
-	var crearUsuario = document.createElement("span");
-	var crearDescripcion = document.createElement("span");
+	var divComentarios = document.createElement("div");
+	var crearLista = document.createElement("ul");
+	var crearUsuario = document.createElement("li");
+	var crearDescripcion = document.createElement("li");
 	var crearImagen = document.createElement("img");
-	var crearFecha = document.createElement("span");
+	var crearFecha = document.createElement("li");
 	var crearBoton = document.createElement("button");
 	var crearSeparador = document.createElement("hr");
-	var crearComentarios = document.createElement("div");
 	divImagen.className = "columna1";
 	divPublicaciones.className = "columna2";
+	divComentarios.id = "div_comentarios";
 	crearUsuario.textContent = user;
 	crearDescripcion.textContent = desc;
 	crearFecha.textContent = fecha.getDate() + "/" + arrayMeses[fecha.getMonth()] + "/" + fecha.getFullYear();
@@ -38,21 +41,41 @@ function crearPublicacion(user, desc, imag){
 	crearImagen.heigth = 150;
 	crearBoton.textContent = "Comentarios (" + nuevaPublicacion + ")";
 	crearBoton.addEventListener("click", hideDiv, false); 
-	crearComentarios.id = "com"+nuevaPublicacion;
 	divImagen.appendChild(crearImagen);
-	divPublicaciones.appendChild(crearUsuario);
-	divPublicaciones.appendChild(crearDescripcion);
-	divPublicaciones.appendChild(crearFecha);
-	divPublicaciones.appendChild(crearBoton);
-	//divPublicaciones.appendChild(crearComentarios);
-	divPublicaciones.appendChild(crearSeparador);
+	crearLista.appendChild(crearUsuario);
+	crearLista.appendChild(crearDescripcion);
+	crearLista.appendChild(crearFecha);
+	crearLista.appendChild(crearBoton);
+	divPublicaciones.appendChild(crearLista);
 	divTodo.appendChild(divImagen);
 	divTodo.appendChild(divPublicaciones);
+	divTodo.appendChild(divComentarios);
+	divTodo.appendChild(crearSeparador);
+	
+	//Sección de Comentarios
+	var divInfoComentarios = document.createElement("div");
+	var tituloComentario = document.createElement("h3");
+	var entradaComentario = document.createElement("input");
+	var botonAgregarComentario = document.createElement("button");
+	var seccionComentarios = document.createElement("div");
+	tituloComentario.textContent = "Comentario: ";
+	botonAgregarComentario.textContent = "Aceptar";
+	botonAgregarComentario.addEventListener("click", crearComentario, false);
+	divInfoComentarios.appendChild(entradaComentario);
+	divInfoComentarios.appendChild(botonAgregarComentario);
+	divComentarios.appendChild(tituloComentario);
+	divComentarios.appendChild(divInfoComentarios);
+	divComentarios.appendChild(seccionComentarios);
+
 	document.body.appendChild(divTodo);
 }
 
 function hideDiv(){
 	console.log("Se escondio");
-	document.getElementById("com0").style.display = "none";
+	//document.getElementById("com0").style.display = "none";
+}
+
+function crearComentario(){
+	console.log("Se realizo el comentario");
 }
 
