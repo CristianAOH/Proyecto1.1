@@ -9,13 +9,13 @@
 }
 
 .div_inicioL {
-	width: 49%;
+	width: 35%;
 	text-align: right;
 	font-weight: bold;
 }
 
 .div_inicioR {
-	width: 49%;
+	width: 55%;
 	text-align: left;
 }
 
@@ -30,7 +30,7 @@ button.inicioD {
 
 .columna1, .columna2 , .columna3{
 	display: inline-block;
-	background: #b2ff59;
+	background: #4DD0E1;
 }
 
 .columna1 {
@@ -55,7 +55,7 @@ button.inicioD {
 
 body {
 	font-family: sans-serif;
-	background: #7ecb20;
+	background: #ffffff;
 }
 
 .inicioD {
@@ -67,7 +67,7 @@ body {
 }
 
 .inicioD:hover {
-	background: #b2ff59;
+	background: #00BCD4;
 }
 
 img {
@@ -82,14 +82,18 @@ img {
 
 .renglon2 {
 	width: 90%;
-	background: #b2ff59;
+	background: #4DD0E1;
 	margin-left: 4.5%;
 }
 
 .botonContador, .botonAgregarComentario { 
-	background: #b0ff57;
+	background: #ffffff;
 	border: 2px solid;
 	border-radius: 6px;	
+}
+
+.botonContador:hover, .botonAgregarComentario:hover {
+	background: #00BCD4;
 }
 
 h3 { 
@@ -107,7 +111,7 @@ h3 {
 }
 
 .inicioR {
-	width: 250px;
+	width: 500px;
 	border: none;
 	border-bottom: 2px solid;
 	background: transparent;
