@@ -50,7 +50,7 @@ function crearPublicacion(user, desc, imag){
 	crearImagen.heigth = 150;
 	crearBoton.id = "botonContadorComentario" + numPublicacion;
 	crearBoton.className = "botonContador";
-	crearBoton.textContent = "Comentarios (" + nuevaPublicacion + ")";
+	crearBoton.textContent = "Comentarios";
 	crearBoton.addEventListener("click", function(){hideDiv(id)}, false); 
 
 	divImagen.appendChild(crearImagen);
