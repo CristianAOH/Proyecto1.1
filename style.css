@@ -1,12 +1,122 @@
 
+.div_inicio {
+	width: 100%;
+}
+
+.div_inicioL, .div_inicioR {
+	display: inline-block;
+	font-style: bold;
+}
+
+.div_inicioL {
+	width: 49%;
+	text-align: right;
+	font-weight: bold;
+}
+
+.div_inicioR {
+	width: 49%;
+	text-align: left;
+}
+
+.div_inicialD {
+	width: 100%;
+}
+
+button.inicioD {
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
 .columna1, .columna2 , .columna3{
 	display: inline-block;
+	background: #b2ff59;
+}
+
+.columna1 {
+	width: 30%;
+	height: 250px;
+	margin-left: 60px;
 }
 
 .columna2 {
 	vertical-align:top;
+	width: 30%;
+	height: 250px;
+	
 }
 
 .columna3 {
+	vertical-align: top;
 	text-align: right;
+	width: 30%;
+	height: 250px;
+}
+
+body {
+	font-family: sans-serif;
+	background: #7ecb20;
+}
+
+.inicioD {
+	color: #000000;
+	background: transparent;
+	border: 2px solid;
+	border-radius: 7px;
+	text-transform: uppercase;
+}
+
+.inicioD:hover {
+	background: #b2ff59;
+}
+
+img {
+	transform: translateX(50%);
+	margin-top: 19px;
+}
+
+.botonContador {
+	margin-top: 15px;
+	margin-right: 30px;
+}
+
+.renglon2 {
+	width: 90%;
+	background: #b2ff59;
+	margin-left: 4.5%;
+}
+
+.botonContador, .botonAgregarComentario { 
+	background: #b0ff57;
+	border: 2px solid;
+	border-radius: 6px;	
+}
+
+h3 { 
+	margin-left: 30px;
+	margin-top: -5px;
+}
+
+.entradaComment {
+	margin-left: 30px;
+	margin-right: 10px;
+	width: 450px;
+	border: none;
+	border-bottom:2px solid;
+	background: transparent;
+}
+
+.inicioR {
+	width: 250px;
+	border: none;
+	border-bottom: 2px solid;
+	background: transparent;
+}
+
+.seccionComentarios {
+	margin-left: 70px;
+}
+
+.parrafoComentario {
+	font-weight: bold;
 }

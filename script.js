@@ -38,6 +38,7 @@ function crearPublicacion(user, desc, imag){
 	divImagen.className = "columna1";
 	divPublicaciones.className = "columna2";
 	divBoton.className = "columna3";
+	divComentarios.className = "renglon2";
 
 	divComentarios.id = "div_comentarios" + numPublicacion;
 	divComentarios.style.display = "none";
@@ -48,6 +49,7 @@ function crearPublicacion(user, desc, imag){
 	crearImagen.width = 150;
 	crearImagen.heigth = 150;
 	crearBoton.id = "botonContadorComentario" + numPublicacion;
+	crearBoton.className = "botonContador";
 	crearBoton.textContent = "Comentarios (" + nuevaPublicacion + ")";
 	crearBoton.addEventListener("click", function(){hideDiv(id)}, false); 
 
@@ -69,6 +71,10 @@ function crearPublicacion(user, desc, imag){
 	var entradaComentario = document.createElement("input");
 	var botonAgregarComentario = document.createElement("button");
 	var seccionComentarios = document.createElement("div");
+
+	entradaComentario.className = "entradaComment";
+	botonAgregarComentario.className = "botonAgregarComentario";
+	seccionComentarios.className = "seccionComentarios";
 
 	seccionComentarios.id = "colocarComments"+numPublicacion;
 	tituloComentario.textContent = "Comentario: ";
@@ -106,6 +112,7 @@ function crearComentario(idBoton){
 	var divComentarios = document.getElementById("colocarComments"+idBoton);
 	var parrafoComentario = document.createElement("p");
 	var spanFecha = document.createElement("span");
+	parrafoComentario.className = "parrafoComentario";
 
 	//Rellenando los elementos
 	parrafoComentario.textContent = obtenerComentario;
